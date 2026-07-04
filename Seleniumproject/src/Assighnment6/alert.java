@@ -1,4 +1,4 @@
-package Assighnment7;
+package Assighnment6;
 
 import java.time.Duration;
 
