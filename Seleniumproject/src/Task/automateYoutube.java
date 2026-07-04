@@ -17,7 +17,8 @@ public class automateYoutube {
 		// Setup Edge
 		EdgeDriver driver = new EdgeDriver();
 		driver.manage().window().maximize();
-
+		
+		//explicit wait
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
 		Actions actions = new Actions(driver);
 
