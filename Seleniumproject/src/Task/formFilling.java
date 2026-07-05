@@ -1,4 +1,4 @@
-package live.Experiments;
+package Task;
 
 import java.time.Duration;
 
@@ -8,10 +8,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.edge.EdgeDriver;
 
-public class jsexcicuter {
+public class formFilling {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+
 		WebDriver driver = new EdgeDriver();
 		driver.get("https://demo.automationtesting.in/Register.html");
 		//driver.manage().window().maximize();
@@ -37,15 +38,19 @@ public class jsexcicuter {
 		
 		WebElement number = driver.findElement(By.cssSelector("[type='tel']"));
 		js.executeScript("arguments[0].value = '1234567890';", number);
-	
-		//window scroll TOP to BTM
-		js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
+
 		
 		WebElement pswrd  = driver.findElement(By.id("secondpassword"));
 		js.executeScript("arguments[0].value = '1234567890';", pswrd);
 		
 		driver.findElement(By.name("radiooptions")).click();
-		driver.findElement(By.id("checkbox1")).click();
+		
+		WebElement scroll = driver.findElement(By.id("checkbox1"));
+		js.executeScript("arguments[0].click();", scroll);
+		
+		//scroll to be seen element
+		js.executeScript("arguments[0].scrollIntoView(true);", scroll);
+
 		
 		//Click element
         WebElement submit = driver.findElement(By.id("submitbtn"));
@@ -57,6 +62,7 @@ public class jsexcicuter {
         System.out.println(text1);
         
         driver.quit();
+
 	}
 
 }

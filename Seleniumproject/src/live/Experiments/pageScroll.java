@@ -17,11 +17,11 @@ public class pageScroll {
 		js.executeScript("window.scrllby(0.500)");
 		
 		//window scroll TOP to BTM
-		js.executeScript("window.scrllto(0.document.body.scrollhieght)");
+		js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
 		
 		//window scroll by specific element 
 		WebElement element = driver.findElement(By.tagName("input"));
-		js.executeScript("window.scrllIntoView();",element);
+		js.executeScript("arguments[0].scrollIntoView(true);", element);
 				
 	}
 
