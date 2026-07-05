@@ -4,13 +4,14 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.edge.EdgeDriver;
 
 public class pageScroll {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		WebDriver driver=null;
+		WebDriver driver=new EdgeDriver();
 		JavascriptExecutor js =(JavascriptExecutor) driver;
 		
 		//window scroll DOWN
@@ -22,7 +23,8 @@ public class pageScroll {
 		//window scroll by specific element 
 		WebElement element = driver.findElement(By.tagName("input"));
 		js.executeScript("arguments[0].scrollIntoView(true);", element);
-				
+		
+		
 	}
 
 }
