@@ -1,5 +1,6 @@
 package live.Experiments;
 
+import java.awt.Window;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
@@ -38,6 +39,10 @@ public class jsexcicuter {
 		WebElement number = driver.findElement(By.cssSelector("[type='tel']"));
 		js.executeScript("arguments[0].value = '1234567890';", number);
 	
+		//window scroll TOP to BTM
+		js.executeScript("window.scrllto(0.document.body.scrollhieght)");
+				
+		
 		WebElement pswrd  = driver.findElement(By.id("secondpassword"));
 		js.executeScript("arguments[0].value = '1234567890';", pswrd);
 		
