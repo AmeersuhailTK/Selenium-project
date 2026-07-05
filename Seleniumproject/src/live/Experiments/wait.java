@@ -3,7 +3,6 @@ package live.Experiments;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -17,12 +16,11 @@ public class wait {
 		//Implicit wait
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 		
-		WebElement searchbox = driver.findElement(By.name("q"));
 		
 		//Explicitwait
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.name("q")));
-		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.name("q"))); //q is a attribute of searchbox
+		                                                                  
 		//elemets clickable
 		wait.until(ExpectedConditions.elementToBeClickable(By.name("q")));
 		
