@@ -1,7 +1,5 @@
 package live.Experiments;
 
-import java.awt.Frame;
-import java.awt.image.SinglePixelPackedSampleModel;
 import java.time.Duration;
 import java.util.List;
 
@@ -22,25 +20,30 @@ public class mulFramesHandle {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		
+		//first tab
 		WebElement fsingl = driver.findElement(By.xpath("//a[@href='#Single']"));
 		js.executeScript("arguments[0].click();", fsingl);
 		
-		
+		// first Frame
 		driver.switchTo().frame(0);
 		driver.findElement(By.cssSelector("[type='text']")).sendKeys("TEXT HERE");
 		
+		//exit first frame
 		driver.switchTo().defaultContent();
+		
+		//second tab
+		WebElement framesecond = driver.findElement(By.cssSelector("[href='#Multiple']"));
+		js.executeScript("arguments[0].click();", framesecond);
+		
+		//second frame
+		driver.switchTo().frame(0);
+		driver.switchTo().frame(1);
+		WebElement input = driver.findElement(By.cssSelector("input[type='text']"));
+		js.executeScript("arguments[0].value='TEXT HERE';", input);
+
 		
 		List<WebElement> iframe = driver.findElements(By.tagName("iframe"));
 		System.out.println("total frame: "+iframe.size());
-		
-		driver.findElement(By.cssSelector("[href='#Multiple']")).click();
-		
-		driver.switchTo().frame(0);
-		driver.switchTo().frame(1);
-		driver.findElement(By.cssSelector("[type='text']")).sendKeys("TEXT HERE");
-		
-		
 		
 
 	}
