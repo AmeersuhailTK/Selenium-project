@@ -25,13 +25,14 @@ public class mulNestedIfrrames {
 		js.executeScript("arguments[0].click();", click);
 
 		// Switch to outer frame
+		WebElement outer = 	driver.findElement(By.tagName("iframe"));
 		driver.switchTo().frame(0);
-		List<WebElement> innerFrames = driver.findElements(By.tagName("iframe"));
-		System.out.println("Inner frames: " + innerFrames.size());
+		System.out.println(" frames: " + outer.getText());
 		System.out.println(driver.findElements(By.tagName("iframe")).size());
 
 		// Switch to inner frame (index 0, not 1)
-		driver.switchTo().frame(0);
+		WebElement inner = driver.findElement(By.tagName("iframe"));
+		driver.switchTo().frame(inner);
 
 		// Enter text
 		WebElement input = driver.findElement(By.cssSelector("input[type='text']"));
