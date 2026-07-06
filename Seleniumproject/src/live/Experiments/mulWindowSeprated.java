@@ -61,6 +61,6 @@ public class mulWindowSeprated {
 		
 		driver.quit();
 		
-	}
+	}//Try to use ITREATOR
 
 }
