@@ -14,7 +14,7 @@ public class singleIframes {
 		
 		WebDriver driver = new EdgeDriver();
 		driver.get("https://demo.automationtesting.in/Frames.html");
-		//driver.manage().window().maximize();
+		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		
