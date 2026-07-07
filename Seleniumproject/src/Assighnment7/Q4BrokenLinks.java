@@ -31,8 +31,9 @@ public class Q4BrokenLinks {
                 continue;
             }
 
-            try {
-                HttpURLConnection conn = (HttpURLConnection) new URL(url).openConnection();
+            
+                @SuppressWarnings("deprecation")
+				HttpURLConnection conn = (HttpURLConnection) new URL(url).openConnection();
                 conn.setRequestMethod("GET");
                 conn.connect();
 
@@ -42,13 +43,12 @@ public class Q4BrokenLinks {
                     System.out.println("BROKEN LINK: " + url + " → Status: " + statusCode);
                 } else {
                     System.out.println("VALID LINK: " + url + " → Status: " + statusCode);
-                }
+                
 
-            } catch (Exception e) {
-                System.out.println("ERROR CHECKING LINK: " + url);
-            }
+                }
         }
 
         driver.quit();
-    }
-}
+        }
+  }   
+
