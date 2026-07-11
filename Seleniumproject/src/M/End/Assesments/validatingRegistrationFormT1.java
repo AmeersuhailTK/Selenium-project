@@ -1,6 +1,5 @@
 package M.End.Assesments;
 
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -10,8 +9,8 @@ import java.time.Duration;
 public class validatingRegistrationFormT1 {
 
 
-    public static  String getPageTitle() {
-
+public static void main(String[] args) {
+	
         // Open the URL
         WebDriver driver = new EdgeDriver();
         driver.get("https://practice.qabrains.com/registration");
@@ -39,15 +38,8 @@ public class validatingRegistrationFormT1 {
 
         // Close browser and return title
         driver.quit();
-        return actualTitle;
-    }
-        
-        public static void main(String[] args) {
-            getPageTitle();
         
     }
-
-   
 }
 
 
