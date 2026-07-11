@@ -1,0 +1,68 @@
+##Report
+
+##Task 1 — 
+Retrieve Webpage Title**  
+
+##**Objective**  
+Verify the page title of the Registration page.  
+The assignment states:  
+> “Retrieve the webpage title using driver.getTitle(). Validate the page title using Java conditional logic…” 
+
+### **Approach**  
+1. Launch the URL: `https://practice.qabrains.com/registration`  
+2. Apply explicit wait: `ExpectedConditions.urlContains("registration")`  
+3. Retrieve the page title using `driver.getTitle()`  
+4. Validate the title using Java `if-else`  
+5. Print the result to console
+
+### **Expected Result**  
+> “Page Title = 'QA Practice Site' (verify exact title text)” 
+
+---
+
+## **Task 2 —
+Verify Registration Form Elements** 
+
+### **Objective**  
+Validate presence of all mandatory form fields.  
+The assignment states:  
+> “Verify visibility of each required element: Name, Country, Account Type, Email, Password, Confirm Password, Sign Up button.” 
+
+### **Approach**  
+1. Open the registration page  
+2. Wait for all elements using `visibilityOfAllElementsLocatedBy()`  
+3. Create a `HashMap<String, Boolean>`  
+4. Check visibility of each element using `isDisplayed()`  
+5. Store results in the map  
+6. Return/print the map
+
+### **Expected Result**  
+> `{EmailField=true, nameField=true, Country=true, ConfirmPasswordField=true, PasswordField=true, AccountType=true, SignUpBotton=true}` 
+
+---
+
+## **Task 3 — 
+Perform Sample Registration**  
+
+### **Objective**  
+Automate full registration and verify redirect.  
+The assignment states:  
+> “Wait until the URL contains 'registered=true'… Capture the current URL after registration.” 
+
+### **Approach**  
+1. Open registration page  
+2. Apply explicit wait  
+3. Fill all fields  
+4. Select dropdown values:  
+   - Country → India  
+   - Account Type → Engineer  
+5. Enter email + password  
+6. Click Sign Up  
+7. Wait for URL change  
+8. Capture final URL
+
+### **Expected Result**  
+> “Redirected URL: `https://practice.qabrains.com/registration?registered=true”` [(practice.qabrains.com in Bing)](https://www.bing.com/search?q="https%3A%2F%2Fpractice.qabrains.com%2Fregistration%3Fregistered%3Dtrue%25E2%2580%259D") 
+
+---
+
